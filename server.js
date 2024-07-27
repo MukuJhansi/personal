@@ -27,6 +27,10 @@ app.get('/assignment', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'assignment.html'));
 });
 
+app.get('/assignment2', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'assignment-2.html'));
+});
+
 app.get('/speech', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'speech - 1.html'));
 });
