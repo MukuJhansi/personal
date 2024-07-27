@@ -1,13 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
-const session = require('express-session');
 const path = require('path');
 
 const app = express();
 const PORT = 443;
 
+// Middleware
 app.use(express.static('public'));
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
 app.use('/pic/', express.static(path.join(__dirname, 'pic')));
@@ -19,27 +18,24 @@ app.use('/script/', express.static(path.join(__dirname, 'scripts')));
 app.use(bodyParser.json());
 app.use(cors());
 
-
-// Serve the speech 2 page
+// Routes
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'speech - 2.html'));
 });
 
-// Serve the assignment page
 app.get('/assignment', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'assignment.html'));
 });
 
-// Serve the speech page
 app.get('/speech', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'speech - 1.html'));
 });
 
-// Serve the DRC page
 app.get('/drc', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'drc.html'));
 });
 
+// Server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
