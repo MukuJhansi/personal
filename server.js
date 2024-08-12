@@ -39,6 +39,10 @@ app.get('/drc', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'drc.html'));
 });
 
+app.get('/table', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'table.html'));
+});
+
 // Server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
