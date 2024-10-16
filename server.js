@@ -6,6 +6,21 @@ const path = require('path');
 const app = express();
 const PORT = 443;
 
+app.get("/download/:filename", (req, res) => {
+    const filePath = __dirname + "/media/" + req.params.filename;
+    res.download(
+        filePath,
+        "Image.jpeg", // Remember to include file extension
+        (err) => {
+            if (err) {
+                res.send({
+                    error: err,
+                    msg: "Problem downloading the file"
+                })
+            }
+        });
+});
+
 // Middleware
 app.use(express.static('public'));
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
