@@ -1,5 +1,5 @@
 img {
-    width: 33.3%;
+    width: 32%;
     height: auto;
     border: 2px black solid;
 }
@@ -14,7 +14,7 @@ a, button{
 
 @media only screen and (max-width: 600px) {
     img {
-        width: 33.3%;
+        width: 32%;
         height: auto;
     }
 }
