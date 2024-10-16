@@ -9,8 +9,7 @@ const PORT = 443;
 // Middleware
 app.use(express.static('public'));
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
-app.use('/pic/', express.static(path.join(__dirname, 'pic')));
-app.use('/video/', express.static(path.join(__dirname, 'video')));
+app.use('/media/', express.static(path.join(__dirname, 'media')));
 app.use('/', express.static(path.join(__dirname, 'home')));
 app.use('/html/', express.static(path.join(__dirname, 'html')));
 app.use('/script/', express.static(path.join(__dirname, 'scripts')));
@@ -21,6 +20,10 @@ app.use(cors());
 // Routes
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'speech - 2.html'));
+});
+
+app.get('/work', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'work.html'));
 });
 
 app.get('/assignment', (req, res) => {
