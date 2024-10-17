@@ -1,0 +1,19 @@
+{
+    "name": "express-server",
+    "version": "1.0.0",
+    "description": "A simple Express server for serving static files and routes",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js",
+      "build": "echo 'No build step required'"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "cors": "^2.8.5",
+      "body-parser": "^1.19.0",
+      "path": "^0.12.7"
+    },
+    "author": "Gunman",
+    "license": "ISC"
+  }
+  
